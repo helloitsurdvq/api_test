@@ -1,0 +1,25 @@
+appName: api
+replicaCount: 1
+namespace: api
+
+configmap:
+  name: myhelmapp-configmap-v1
+  data:
+    CUSTOM_HEADER: 'This app was deployed with helm!'
+
+image:
+  repository: helloitsurdvq/api
+  tag: latest
+  pullPolicy: IfNotPresent
+
+service:
+  type: NodePort
+  port: 3000
+  nodePort: 30081
+
+database:
+  uri: "mongodb+srv://root:hello123@vdt.dm0vket.mongodb.net/?appName=vdt"
+  host: vdt_db
+  port: 27017
+  username: root
+  password: hello123
