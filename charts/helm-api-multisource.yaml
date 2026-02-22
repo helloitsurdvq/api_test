@@ -11,16 +11,13 @@ spec:
       selfHeal: true
     syncOptions:
       - CreateNamespace=true
-  destination:
-    server: https://kubernetes.default.svc
-    namespace: api
   sources:
-    - repoURL: https://github.com/helloitsurdvq/VDT2024-api
+    - repoURL: https://github.com/helloitsurdvq/api_test
       path: charts
       targetRevision: HEAD
       helm:
         valueFiles:
           - $values/values.yaml
-    - repoURL: 'https://github.com/helloitsurdvq/VDT2024-api-config'
-      targetRevision: HEAD
-      ref: values
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: api
