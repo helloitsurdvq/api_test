@@ -10,7 +10,7 @@ spec:
   ports:
   - port: {{ .Values.service.port }}
     targetPort: 3000
-    name: nodejs
+    name: api-app
     nodePort: {{ .Values.service.nodePort }}
   selector:
     app: {{ .Values.appName }}
