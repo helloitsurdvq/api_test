@@ -5,10 +5,8 @@ metadata:
   namespace: {{ .Values.namespace }}
   labels:
     prometheus: main
+    app: api
 spec:
-  namespaceSelector:
-    matchNames:
-      - {{ .Values.namespace }}
   selector:
     matchLabels:
       app: api
