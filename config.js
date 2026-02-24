@@ -10,8 +10,8 @@ mongoose.connection.on("disconnected", () => {
 
 module.exports = async function connectMongoDb() {
   try {
-    mongoose.connect(process.env.DATABASE_PORT);
+    await mongoose.connect(process.env.DATABASE_PORT);
   } catch (err) {
-    console.log(err);
+    console.error("MongoDB connection failed:", err.message);
   }
 };
