@@ -9,7 +9,7 @@ configmap:
 
 image:
   repository: helloitsurdvq/api
-  tag: latest
+  tag: fix-auth-off
   pullPolicy: IfNotPresent
 
 service:
